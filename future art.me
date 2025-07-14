@@ -1,0 +1,110 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function FutureArtsHome() {
+  return (
+    <main className="min-h-screen bg-white text-gray-900 p-6">
+      <section className="text-center py-10">
+        <motion.img 
+          src="/logo.png" 
+          alt="FutureArts Logo" 
+          className="mx-auto w-32 mb-6"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.8 }} 
+        />
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold mb-4"
+        >
+          FutureArts Printing & Branding
+        </motion.h1>
+        <p className="text-lg max-w-xl mx-auto">
+          We specialize in high-impact printing solutions: from billboard banners to car wraps, packaging, and more. Let your brand be seen.
+        </p>
+        <Button className="mt-6">Get a Free Quote</Button>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 py-10">
+        {services.map((service, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <Card className="rounded-2xl shadow-md">
+              <CardContent className="p-6">
+                <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
+                <p>{service.description}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </section>
+
+      <section className="bg-gray-100 p-6 rounded-2xl shadow-inner">
+        <h3 className="text-2xl font-semibold mb-4">Why Choose FutureArts?</h3>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>100% Quality Guarantee</li>
+          <li>Fast Turnaround Times</li>
+          <li>Eco-Friendly Materials</li>
+          <li>Serving All of Lebanon & MENA</li>
+        </ul>
+      </section>
+
+      <section className="mt-16">
+        <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
+        <form className="grid grid-cols-1 gap-4 max-w-lg mx-auto">
+          <input type="text" placeholder="Your Name" className="border rounded p-2" required />
+          <input type="email" placeholder="Your Email" className="border rounded p-2" required />
+          <textarea placeholder="Your Message" rows="4" className="border rounded p-2" required></textarea>
+          <Button type="submit">Send Message</Button>
+        </form>
+        <div className="text-center mt-4 text-sm text-gray-600">
+          📞 Company No: 03361613 | ✉️ info@futureart.me
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <h3 className="text-xl font-bold mb-4">Langues disponibles / Available Languages / اللغات المتوفرة</h3>
+        <p className="text-center">🇫🇷 Français – 🇬🇧 English – 🇦🇪 العربية</p>
+      </section>
+
+      <footer className="text-center mt-16 text-sm text-gray-500">
+        &copy; {new Date().getFullYear()} FutureArts. All rights reserved.
+      </footer>
+    </main>
+  );
+}
+
+const services = [
+  {
+    title: "Vehicle Branding",
+    description: "Custom vinyl wraps for cars, trucks, and vans. Mobile advertising that turns heads."
+  },
+  {
+    title: "Billboard Printing",
+    description: "High-resolution, weather-resistant billboards for impactful outdoor marketing."
+  },
+  {
+    title: "Packaging & Product Labels",
+    description: "Brand-focused packaging solutions for FMCG, retail, and more."
+  },
+  {
+    title: "Event & Display Materials",
+    description: "Roll-ups, booths, signage, and more for events and exhibitions."
+  },
+  {
+    title: "Corporate Branding",
+    description: "From business cards to wall graphics—complete visual identity kits."
+  },
+  {
+    title: "Custom Printing",
+    description: "If you can imagine it, we can print it—tailored to your business needs."
+  }
+];
