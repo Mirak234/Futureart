@@ -1,20 +1,10 @@
 {
-  "name": "futurearts-site",
-  "version": "1.0.0",
+  "name": "future-art-mali-root",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "framer-motion": "^10.12.16"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.3.0",
-    "postcss": "^8.4.0",
-    "autoprefixer": "^10.4.0"
+    "dev": "npm --prefix ./futurearts-website run dev",
+    "build": "npm --prefix ./futurearts-website run build",
+    "start": "npm --prefix ./futurearts-website run start",
+    "lint": "npm --prefix ./futurearts-website run lint"
   }
 }
